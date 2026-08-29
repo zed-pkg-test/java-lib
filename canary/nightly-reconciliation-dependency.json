@@ -1,0 +1,13 @@
+{
+  "schema_version": "nightly-reconciliation-canary.v1",
+  "linear_issue": "DEN-2877",
+  "source_policy_pr": "ORESoftware/project-registry#44",
+  "scenario": "dependency-head-and-version-change",
+  "repository": "zed-pkg-test/java-lib",
+  "base_sha": "daa9d8f4f23b4ef1c8dd4a11f9d802c4fce83b48",
+  "expected_branch_version": "0.1.1",
+  "disposable": true,
+  "merge_forbidden": true,
+  "expected_consumer": "zed-pkg-test/java-app",
+  "purpose": "Prove that the nightly reconciler discovers a dependency PR through Zed metadata and updates, but does not merge, its dependent canary PR."
+}
