@@ -12,3 +12,7 @@ tmp
 temp
 tmp/worktrees
 temp/worktrees
+
+# --- carried over from the grafted branch rescue/orphan-74905f7ed152-feat-den-1417-add-canonical-nix-interop ---
+.cache/
+/target
