@@ -12,3 +12,13 @@ tmp
 temp
 tmp/worktrees
 temp/worktrees
+
+# --- carried over from the grafted branch rescue/orphan-762071627a6a-feat-publish-isolated-rust-dart-and-type ---
+.cache/
+/.vendor/
+/.zed/pack/
+/target
+/zed_modules/
+src/dart/.dart_tool/
+src/dart/build/
+src/dart/pubspec.lock
