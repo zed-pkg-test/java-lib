@@ -12,3 +12,7 @@ tmp
 temp
 tmp/worktrees
 temp/worktrees
+
+# --- carried over from the grafted branch rescue/orphan-7d7132f79c48-merge-den-1418-compose-nix-export-plan-s ---
+.cache/
+/target
