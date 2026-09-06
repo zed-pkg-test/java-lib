@@ -12,3 +12,7 @@ tmp
 temp
 tmp/worktrees
 temp/worktrees
+
+# --- carried over from the grafted branch rescue/orphan-3790cd96f100-feat-den-1450-add-environmentplan-v2-con ---
+.cache/
+/target
