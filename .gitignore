@@ -31,3 +31,4 @@ src/dart/.dart_tool/
 src/dart/pubspec.lock
 src/dart/build/
 # --- carried over from the grafted branch rescue/orphan-74905f7ed152-feat-den-1417-add-canonical-nix-interop ---
+# --- carried over from the grafted branch rescue/orphan-762071627a6a-feat-publish-isolated-rust-dart-and-type ---
