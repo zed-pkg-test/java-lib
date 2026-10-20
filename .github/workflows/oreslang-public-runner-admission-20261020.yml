@@ -1,0 +1,35 @@
+name: Oreslang public hosted-runner admission canary
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/oreslang-public-runner-admission-20261020.yml
+permissions: {}
+jobs:
+  admission:
+    if: ${{ github.repository == 'zed-pkg-test/java-lib' && github.repository_id == '1323575860' && github.event.repository.private == false }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 3
+    steps:
+      - name: Prove hosted runner execution without checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$RUNNER_OS" = "Linux"
+          test -n "$RUNNER_NAME"
+          test "$GITHUB_REPOSITORY" = "zed-pkg-test/java-lib"
+          test ! -e "$GITHUB_WORKSPACE/.git"
+          /usr/bin/python3 -I -B - <<'PY'
+          import hashlib
+          expected = "6be7440eb9db215585298e9c466a110440c97d92c05d3d47d0b3f30c4e937d19"
+          actual = hashlib.sha256(b"oreslang-public-runner-canary-20261020").hexdigest()
+          assert actual == expected, (actual, expected)
+          print("SOURCE_FREE_PUBLIC_RUNNER_EXECUTED=true")
+          PY
+          date -u +'%Y-%m-%dT%H:%M:%SZ'
+      - name: State evidence boundary
+        shell: bash
+        run: |
+          echo "PUBLIC_RUNNER_ADMISSION_ONLY"
+          echo "No private Oreslang source, no cross-org source transfer, no compiler correctness claim"
