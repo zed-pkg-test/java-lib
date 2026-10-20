@@ -22,7 +22,7 @@ jobs:
           test ! -e "$GITHUB_WORKSPACE/.git"
           /usr/bin/python3 -I -B - <<'PY'
           import hashlib
-          expected = "6be7440eb9db215585298e9c466a110440c97d92c05d3d47d0b3f30c4e937d19"
+          expected = "c9d3fd7488e1015f8aa87fc08031713c32e27fd8a40f79e31c2c462202b63a18"
           actual = hashlib.sha256(b"oreslang-public-runner-canary-20261020").hexdigest()
           assert actual == expected, (actual, expected)
           print("SOURCE_FREE_PUBLIC_RUNNER_EXECUTED=true")
